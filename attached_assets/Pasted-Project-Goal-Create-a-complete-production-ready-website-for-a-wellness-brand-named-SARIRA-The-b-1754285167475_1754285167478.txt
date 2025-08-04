@@ -1,0 +1,532 @@
+Project Goal: Create a complete, production-ready website for a wellness brand named "SARIRA". The brand is rooted in traditional Tamil wellness practices, modernized for today's lifestyle. The flagship product is "Fig Malt".
+
+Core Technologies:
+
+Framework: Next.js (with App Router)
+Language: TypeScript
+Styling: Tailwind CSS
+UI Components: ShadCN UI
+Generative AI: Genkit for an interactive "Wellness Tip" feature.
+1.1. package.json: Set up the project with the following dependencies:
+
+{
+  "name": "nextn",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack -p 9002",
+    "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
+    "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@genkit-ai/googleai": "^1.14.1",
+    "@genkit-ai/next": "^1.14.1",
+    "@hookform/resolvers": "^4.1.3",
+    "@radix-ui/react-accordion": "^1.2.3",
+    "@radix-ui/react-alert-dialog": "^1.1.6",
+    "@radix-ui/react-avatar": "^1.1.3",
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "@radix-ui/react-collapsible": "^1.1.11",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-label": "^2.1.2",
+    "@radix-ui/react-menubar": "^1.1.6",
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-progress": "^1.1.2",
+    "@radix-ui/react-radio-group": "^1.2.3",
+    "@radix-ui/react-scroll-area": "^1.2.3",
+    "@radix-ui/react-select": "^2.1.6",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@radix-ui/react-slider": "^1.2.3",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-switch": "^1.1.3",
+    "@radix-ui/react-tabs": "^1.1.3",
+    "@radix-ui/react-toast": "^1.2.6",
+    "@radix-ui/react-tooltip": "^1.1.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.5.0",
+    "embla-carousel-react": "^8.6.0",
+    "firebase": "^11.9.1",
+    "genkit": "^1.14.1",
+    "lucide-react": "^0.475.0",
+    "next": "15.3.3",
+    "patch-package": "^8.0.0",
+    "react": "^18.3.1",
+    "react-day-picker": "^8.10.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.2",
+    "recharts": "^2.15.1",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "genkit-cli": "^1.14.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
+
+1.2. tailwind.config.ts: Configure Tailwind CSS with the brand's custom theme, fonts, and animations.
+
+import type {Config} from 'tailwindcss';
+
+export default {
+  darkMode: ['class'],
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
+    extend: {
+      fontFamily: {
+        body: ['Poppins', 'sans-serif'],
+        headline: ['Playfair Display', 'serif'],
+        code: ['monospace'],
+      },
+      colors: {
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        chart: {
+          '1': 'hsl(var(--chart-1))',
+          '2': 'hsl(var(--chart-2))',
+          '3': 'hsl(var(--chart-3))',
+          '4': 'hsl(var(--chart-4))',
+          '5': 'hsl(var(--chart-5))',
+        },
+        sidebar: {
+          DEFAULT: 'hsl(var(--sidebar-background))',
+          foreground: 'hsl(var(--sidebar-foreground))',
+          primary: 'hsl(var(--sidebar-primary))',
+          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+          accent: 'hsl(var(--sidebar-accent))',
+          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+          border: 'hsl(var(--sidebar-border))',
+          ring: 'hsl(var(--sidebar-ring))',
+        },
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
+        },
+        floating: {
+          '0%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-15px)' },
+          '100%': { transform: 'translateY(0px)' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        floating: 'floating 3s ease-in-out infinite',
+      },
+      typography: ({ theme }: { theme: any }) => ({
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': theme('colors.foreground / 0.8'),
+            '--tw-prose-headings': theme('colors.primary.DEFAULT'),
+            '--tw-prose-lead': theme('colors.foreground'),
+            '--tw-prose-links': theme('colors.accent.DEFAULT'),
+            '--tw-prose-bold': theme('colors.primary.DEFAULT'),
+            '--tw-prose-counters': theme('colors.muted.foreground'),
+            '--tw-prose-bullets': theme('colors.accent.DEFAULT'),
+            '--tw-prose-hr': theme('colors.border'),
+            '--tw-prose-quotes': theme('colors.primary.DEFAULT'),
+            '--tw-prose-quote-borders': theme('colors.accent.DEFAULT'),
+            '--tw-prose-captions': theme('colors.muted.foreground'),
+            '--tw-prose-code': theme('colors.primary.DEFAULT'),
+            '--tw-prose-pre-code': theme('colors.primary.foreground'),
+            '--tw-prose-pre-bg': theme('colors.primary.DEFAULT'),
+            '--tw-prose-th-borders': theme('colors.border'),
+            '--tw-prose-td-borders': theme('colors.border'),
+            '--tw-prose-invert-body': theme('colors.primary.foreground / 0.8'),
+            '--tw-prose-invert-headings': theme('colors.primary.foreground'),
+            '--tw-prose-invert-lead': theme('colors.primary.foreground'),
+            '--tw-prose-invert-links': theme('colors.accent.DEFAULT'),
+            '--tw-prose-invert-bold': theme('colors.primary.foreground'),
+            '--tw-prose-invert-counters': theme('colors.muted.foreground'),
+            '--tw-prose-invert-bullets': theme('colors.accent.DEFAULT'),
+            '--tw-prose-invert-hr': theme('colors.border'),
+            '--tw-prose-invert-quotes': theme('colors.primary.foreground'),
+            '--tw-prose-invert-quote-borders': theme('colors.accent.DEFAULT'),
+            '--tw-prose-invert-captions': theme('colors.muted.foreground'),
+            '--tw-prose-invert-code': theme('colors.primary.foreground'),
+            '--tw-prose-invert-pre-code': theme('colors.primary.DEFAULT'),
+            '--tw-prose-invert-pre-bg': theme('colors.primary.foreground'),
+            '--tw-prose-invert-th-borders': theme('colors.border'),
+            '--tw-prose-invert-td-borders': theme('colors.border'),
+            h1: {
+                fontFamily: theme('fontFamily.headline').join(', '),
+            },
+            h2: {
+                fontFamily: theme('fontFamily.headline').join(', '),
+            },
+            h3: {
+                fontFamily: theme('fontFamily.headline').join(', '),
+            },
+            p: {
+                fontFamily: theme('fontFamily.body').join(', '),
+            },
+            a: {
+                fontFamily: theme('fontFamily.body').join(', '),
+            },
+          },
+        },
+      }),
+    },
+  },
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+} satisfies Config;
+
+1.3. src/app/globals.css: Define the root CSS variables for the color palette.
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 43 43% 97%; /* Heritage Cream */
+    --foreground: 88 28% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 88 28% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 88 28% 15%;
+    --primary: 88 28% 21%; /* Deep Green #364A22 */
+    --primary-foreground: 43 43% 98%;
+    --secondary: 43 33% 92%;
+    --secondary-foreground: 88 28% 21%;
+    --muted: 43 33% 94%;
+    --muted-foreground: 88 28% 35%;
+    --accent: 29 78% 54%; /* Burnt Orange #E38A30 */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 43 23% 90%;
+    --input: 43 23% 90%;
+    --ring: 29 78% 54%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 88 28% 10%;
+    --foreground: 43 43% 97%;
+    --card: 88 28% 12%;
+    --card-foreground: 43 43% 97%;
+    --popover: 88 28% 10%;
+    --popover-foreground: 43 43% 97%;
+    --primary: 43 43% 97%;
+    --primary-foreground: 88 28% 10%;
+    --secondary: 88 28% 15%;
+    --secondary-foreground: 43 43% 97%;
+    --muted: 88 28% 15%;
+    --muted-foreground: 43 33% 80%;
+    --accent: 29 78% 54%;
+    --accent-foreground: 88 28% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 88 28% 20%;
+    --input: 88 28% 20%;
+    --ring: 29 78% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  section {
+    @apply w-full py-16 md:py-20 lg:py-24;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline text-primary;
+  }
+}
+
+1.4. src/app/layout.tsx: Create the root layout, importing the Google Fonts and wrapping the content with the Toaster for notifications.
+
+import type { Metadata } from 'next';
+import './globals.css';
+import { Toaster } from "@/components/ui/toaster";
+
+export const metadata: Metadata = {
+  title: 'SARIRA | Functional Wellness Rooted in Tradition',
+  description: "Functional wellness rooted in Tamil tradition, blended for today's lifestyle.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="!scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+      </head>
+      <body className="font-body antialiased">
+        {children}
+        <Toaster />
+      </body>
+    </html>
+  );
+}
+
+2.1. Genkit Configuration (src/ai/genkit.ts):
+
+import {genkit} from 'genkit';
+import {googleAI} from '@genkit-ai/googleai';
+
+export const ai = genkit({
+  plugins: [googleAI()],
+  model: 'googleai/gemini-2.0-flash',
+});
+
+2.2. Genkit Flow (src/ai/flows/wellness-tip-generator.ts): Define the AI flow that generates wellness tips.
+
+'use server';
+
+/**
+ * @fileOverview An AI agent that provides wellness tips and recipes related to Tamil tradition and current health trends.
+ *
+ * - generateWellnessTip - A function that generates a wellness tip.
+ * - WellnessTipInput - The input type for the generateWellnessTip function.
+ * - WellnessTipOutput - The return type for the generateWellnessTip function.
+ */
+
+import {ai} from '@/ai/genkit';
+import {z} from 'genkit';
+
+const WellnessTipInputSchema = z.object({
+  topic: z
+    .string()
+    .describe('The specific wellness topic to generate a tip for.'),
+});
+export type WellnessTipInput = z.infer<typeof WellnessTipInputSchema>;
+
+const WellnessTipOutputSchema = z.object({
+  tip: z.string().describe('A wellness tip or recipe related to Tamil tradition and current health trends.'),
+});
+export type WellnessTipOutput = z.infer<typeof WellnessTipOutputSchema>;
+
+export async function generateWellnessTip(input: WellnessTipInput): Promise<WellnessTipOutput> {
+  return wellnessTipFlow(input);
+}
+
+const prompt = ai.definePrompt({
+  name: 'wellnessTipPrompt',
+  input: {schema: WellnessTipInputSchema},
+  output: {schema: WellnessTipOutputSchema},
+  prompt: You are a wellness expert specializing in Tamil traditions and current health trends.
+
+You will generate a wellness tip or recipe based on the user's specified topic, blending ancient wisdom with modern nutritional science. The tip should be practical and easy to implement in daily life.
+
+Topic: {{{topic}}}
+,
+});
+
+const wellnessTipFlow = ai.defineFlow(
+  {
+    name: 'wellnessTipFlow',
+    inputSchema: WellnessTipInputSchema,
+    outputSchema: WellnessTipOutputSchema,
+  },
+  async input => {
+    const {output} = await prompt(input);
+    return output!;
+  }
+);
+
+2.3. Server Action (src/app/actions.ts): Create the server action to connect the frontend form to the Genkit flow.
+
+'use server';
+
+import { generateWellnessTip, WellnessTipInput } from '@/ai/flows/wellness-tip-generator';
+import { z } from 'zod';
+
+const TipSchema = z.object({
+  topic: z.string().min(3, { message: 'Topic must be at least 3 characters long.' }),
+});
+
+export type State = {
+  message?: string | null;
+  tip?: string | null;
+  errors?: {
+    topic?: string[];
+  };
+};
+
+export async function getWellnessTip(prevState: State, formData: FormData): Promise<State> {
+  const validatedFields = TipSchema.safeParse({
+    topic: formData.get('topic'),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: 'Please check your input.',
+    };
+  }
+
+  try {
+    const input: WellnessTipInput = { topic: validatedFields.data.topic };
+    const result = await generateWellnessTip(input);
+    if (result.tip) {
+      return { tip: result.tip, message: null, errors: {} };
+    } else {
+      return { message: "Sorry, I couldn't generate a tip for that topic.", tip: null, errors: {} };
+    }
+  } catch (error) {
+    console.error(error);
+    return { message: 'An unexpected error occurred. Please try again.', tip: null, errors: {} };
+  }
+}
+
+Create SVG icon components and the reusable SariraLogo component in the src/components/icons/ directory. Use the existing code for InstagramIcon.tsx, SariraFigMalt.tsx, SariraLogo.tsx, WhatsappIcon.tsx, and YoutubeIcon.tsx.
+
+For each file in src/components/landing/, create the component with the exact content provided in the prompt context. This includes:
+
+Header.tsx
+Hero.tsx
+About.tsx
+Product.tsx
+HowToUse.tsx
+Recipes.tsx
+Testimonials.tsx
+Gallery.tsx
+Journal.tsx
+Community.tsx
+StoreLocator.tsx
+Faq.tsx
+WellnessAI.tsx
+Footer.tsx
+WhatsappButton.tsx
+(Self-correction: The full code for each is lengthy but is present in the initial prompt history. The instruction is to use that exact code.)
+
+5.1. Homepage (src/app/page.tsx): Assemble the main landing page by importing and arranging the components in the correct order.
+
+import { Header } from '@/components/landing/Header';
+import { Hero } from '@/components/landing/Hero';
+import { About } from '@/components/landing/About';
+import { Product } from '@/components/landing/Product';
+import { Community } from '@/components/landing/Community';
+import { Journal } from '@/components/landing/Journal';
+import { WellnessAI } from '@/components/landing/WellnessAI';
+import { Footer } from '@/components/landing/Footer';
+import { WhatsappButton } from '@/components/landing/WhatsappButton';
+import { Gallery } from '@/components/landing/Gallery';
+import { HowToUse } from '@/components/landing/HowToUse';
+import { Recipes } from '@/components/landing/Recipes';
+import { StoreLocator } from '@/components/landing/StoreLocator';
+import { Faq } from '@/components/landing/Faq';
+import { Testimonials } from '@/components/landing/Testimonials';
+
+export default function Home() {
+  return (
+    <div className="flex flex-col min-h-screen bg-background">
+      <Header />
+      <main className="flex-1">
+        <Hero />
+        <About />
+        <Product />
+        <HowToUse />
+        <Recipes />
+        <Testimonials />
+        <Gallery />
+        <Journal />
+        <Community />
+        <StoreLocator />
+        <Faq />
+        <WellnessAI />
+      </main>
+      <Footer />
+      <WhatsappButton />
+    </div>
+  );
+}
+
+5.2. Create All Static and Content Pages: For each of the following paths, create the page file (page.tsx) and populate it with the full code and content provided in the initial prompt history.
+
+/product -> src/app/product/page.tsx
+/faq -> src/app/faq/page.tsx
+/gallery -> src/app/gallery/page.tsx
+/store-locator -> src/app/store-locator/page.tsx
+/tamil-culture -> src/app/tamil-culture/page.tsx
+/privacy-policy -> src/app/privacy-policy/page.tsx
+/terms-of-service -> src/app/terms-of-service/page.tsx
+/returns-and-refunds -> src/app/returns-and-refunds/page.tsx
+/shipping-and-delivery -> src/app/shipping-and-delivery/page.tsx
+(Self-correction: Again, the full, final content for each of these files is available in the provided context and should be used directly.)
