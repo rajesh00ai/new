@@ -1,15 +1,13 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
-import KeyBenefits from "@/components/key-benefits";
 import OurStory from "@/components/our-story";
-import RecipesSection from "@/components/recipes-section";
-import UsageIdeas from "@/components/usage-ideas";
-import GallerySection from "@/components/gallery-section";
-import StoreLocator from "@/components/store-locator";
-import ProductShowcase from "@/components/product-showcase";
-import HealthBenefits from "@/components/health-benefits";
-import AIWellnessTips from "@/components/ai-wellness-tips";
-import ContactSection from "@/components/contact-section";
+import ProductSection from "@/components/product-section";
+import RecipesGrid from "@/components/recipes-grid";
+import VisualStory from "@/components/visual-story";
+import SariraJournal from "@/components/sarira-journal";
+import SariraCircle from "@/components/sarira-circle";
+import FAQSection from "@/components/faq-section";
+import AIWellnessTips from "@/components/ai-wellness-tips-new";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -17,16 +15,14 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
       <HeroSection />
-      <KeyBenefits />
       <OurStory />
-      <RecipesSection />
-      <UsageIdeas />
-      <ProductShowcase />
-      <GallerySection />
-      <StoreLocator />
-      <HealthBenefits />
+      <ProductSection />
+      <RecipesGrid />
+      <VisualStory />
+      <SariraJournal />
+      <SariraCircle />
+      <FAQSection />
       <AIWellnessTips />
-      <ContactSection />
       <Footer />
     </div>
   );

@@ -52,56 +52,59 @@ export default function AIWellnessTips() {
             Get a topic like "digestive health" or "energy boost" or "wellness tips"
           </p>
         
-        <div className="bg-white rounded-xl p-6 shadow-lg">
-          <div className="space-y-6">
-            <div className="flex items-center justify-center space-x-4">
-              <Bot className="text-3xl text-brand-orange" size={32} />
-              <h3 className="text-2xl font-semibold">AI Wellness Assistant</h3>
-            </div>
-            
-            <div className="max-w-2xl mx-auto">
+          <div className="bg-white rounded-xl p-6 shadow-lg">
+            <div className="space-y-6">
+              <div className="mb-6">
+                <input 
+                  type="text" 
+                  placeholder="e.g., Healthy Digestion"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-full text-gray-700 focus:outline-none focus:border-brand-orange"
+                />
+              </div>
+              
               {currentTip ? (
-                <Card className="bg-white/20 border-none">
+                <Card className="bg-gradient-to-br from-warm-neutral to-soft-neutral border-none text-gray-700">
                   <CardContent className="p-6">
-                    <div className="text-left space-y-4">
-                      <div className="flex items-center space-x-2">
-                        <span className="bg-brand-orange px-3 py-1 rounded-full text-sm font-medium">
-                          {currentTip.category}
-                        </span>
+                    <div className="flex items-start space-x-3 mb-4">
+                      <Lightbulb className="w-6 h-6 text-brand-orange mt-1 flex-shrink-0" />
+                      <div className="text-left">
+                        <h4 className="font-semibold text-brand-green mb-2">{currentTip.category}</h4>
+                        <p className="text-lg mb-4">{currentTip.tip}</p>
+                        <div className="bg-white p-4 rounded-lg">
+                          <h5 className="font-medium text-brand-green mb-2">Benefits:</h5>
+                          <p className="text-sm">{currentTip.benefits}</p>
+                        </div>
+                        {currentTip.additionalInfo && (
+                          <div className="mt-4 text-sm">
+                            <p>{currentTip.additionalInfo}</p>
+                          </div>
+                        )}
                       </div>
-                      <p className="text-lg font-medium">{currentTip.tip}</p>
-                      <p className="text-sm opacity-90">{currentTip.benefits}</p>
-                      {currentTip.additionalInfo && (
-                        <p className="text-sm opacity-80 border-t border-white/20 pt-3">
-                          {currentTip.additionalInfo}
-                        </p>
-                      )}
                     </div>
                   </CardContent>
                 </Card>
               ) : (
-                <div className="bg-white bg-opacity-20 rounded-xl p-6 mb-6">
-                  <p className="text-lg opacity-90">
-                    "Based on traditional Tamil wellness practices, incorporating Fig Malt into your morning routine 
-                    can enhance digestive health and provide sustained energy throughout the day."
+                <div className="text-center py-6">
+                  <Bot className="w-12 h-12 text-brand-orange mx-auto mb-3" />
+                  <p className="text-gray-600">
+                    Get personalized wellness tips rooted in Tamil tradition
                   </p>
                 </div>
               )}
               
-              <Button 
+              <Button
                 onClick={() => generateTipMutation.mutate()}
                 disabled={generateTipMutation.isPending}
-                className="bg-brand-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all"
+                className="bg-brand-orange text-white hover:bg-brand-orange/90 px-8 py-3 text-lg font-medium rounded-full"
               >
                 {generateTipMutation.isPending ? (
                   <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    <Loader2 className="w-5 h-5 mr-2 animate-spin" />
                     Generating...
                   </>
                 ) : (
                   <>
-                    <Lightbulb className="mr-2 h-4 w-4" />
-                    Get Your Personalized Tip
+                    Get Wellness Tip
                   </>
                 )}
               </Button>

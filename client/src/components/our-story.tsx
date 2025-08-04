@@ -2,20 +2,26 @@ import traditionalImagePath from "@assets/img 6_1754285845405.png";
 
 export default function OurStory() {
   return (
-    <section className="py-20 bg-brand-green text-white">
+    <section id="about" className="py-20 bg-gradient-to-br from-warm-neutral to-soft-neutral">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
+          <div className="space-y-8 text-gray-700">
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Story</h2>
               <p className="text-lg leading-relaxed opacity-90 mb-6">
-                Inspired by Tamil traditions and grandmother's wisdom, SARIRA brings you the authentic taste 
-                of wellness that has nourished families for generations.
+                SARIRA is born from a love for pure, traditional wellness. Our founder, 
+                inspired by the wisdom of Tamil grandmothers, envisioned a brand that 
+                brings ancient recipes to modern lives. We believe in food that heals, 
+                prepared with intention and care.
               </p>
               <p className="text-lg leading-relaxed opacity-90 mb-6">
-                Rooted in Siddha medicine and used in traditional rituals, our Fig Malt has been a cornerstone 
-                of postpartum nutrition and family wellness in Tamil culture.
+                Our Fig Malt is a tribute to this heritage—a blend of organic figs and 
+                premium nuts, crafted to nourish you from the inside out. It's more than a 
+                product; it's a piece of our culture, made for your well-being.
               </p>
+              <button className="border border-brand-orange text-brand-orange px-6 py-2 rounded-full hover:bg-brand-orange hover:text-white transition-all">
+                Explore Our Heritage →
+              </button>
             </div>
 
             <div className="bg-brand-orange bg-opacity-10 p-6 rounded-2xl border-l-4 border-brand-orange">

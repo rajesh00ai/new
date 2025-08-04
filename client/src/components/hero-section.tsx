@@ -14,16 +14,11 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="font-bold text-5xl lg:text-6xl text-brand-green leading-tight">
-                SARIRA
-                <span className="text-brand-orange block"> Fig Malt</span>
+              <h1 className="font-bold text-5xl lg:text-6xl text-brand-green leading-tight mb-6">
+                Feed Your Roots. Fuel Your Rise.
               </h1>
-              <p className="text-2xl text-brand-green font-medium mb-4 italic">
-                "Legacy of Tamil Wellness in a Spoon"
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Experience the ancient wisdom of Tamil nutrition with our premium Fig Malt blend. 
-                Crafted with organic figs, almonds, and cashews for modern wellness needs.
+              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                Functional wellness rooted in Tamil tradition, blended for today's lifestyle.
               </p>
             </div>
             
@@ -32,7 +27,7 @@ export default function HeroSection() {
                 onClick={scrollToProducts}
                 className="bg-brand-green text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-opacity-90 transition-all text-center"
               >
-                Shop Now
+                Try Fig Malt
               </button>
               <a 
                 href="tel:+917010422748" 
@@ -41,22 +36,26 @@ export default function HeroSection() {
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                Order Now
+                Join Our WhatsApp Circle
               </a>
             </div>
             
-            <div className="flex items-center space-x-8 pt-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-brand-green">100%</div>
-                <div className="text-sm text-gray-600">Organic</div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
+              <div className="text-center p-4 bg-white bg-opacity-50 rounded-lg">
+                <div className="w-8 h-8 bg-brand-orange rounded-full mx-auto mb-2"></div>
+                <div className="text-sm font-medium text-brand-green">Fertility Boost</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-brand-green">Ancient</div>
-                <div className="text-sm text-gray-600">Recipes</div>
+              <div className="text-center p-4 bg-white bg-opacity-50 rounded-lg">
+                <div className="w-8 h-8 bg-brand-orange rounded-full mx-auto mb-2"></div>
+                <div className="text-sm font-medium text-brand-green">Postpartum Support</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-brand-green">Natural</div>
-                <div className="text-sm text-gray-600">Ingredients</div>
+              <div className="text-center p-4 bg-white bg-opacity-50 rounded-lg">
+                <div className="w-8 h-8 bg-brand-orange rounded-full mx-auto mb-2"></div>
+                <div className="text-sm font-medium text-brand-green">Immunity</div>
+              </div>
+              <div className="text-center p-4 bg-white bg-opacity-50 rounded-lg">
+                <div className="w-8 h-8 bg-brand-orange rounded-full mx-auto mb-2"></div>
+                <div className="text-sm font-medium text-brand-green">No Preservatives</div>
               </div>
             </div>
           </div>

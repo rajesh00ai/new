@@ -37,28 +37,34 @@ export default function Navigation() {
                 Home
               </button>
               <button 
-                onClick={() => scrollToSection('products')} 
-                className="text-gray-700 hover:text-brand-orange transition-colors font-medium"
-              >
-                Products
-              </button>
-              <button 
-                onClick={() => scrollToSection('benefits')} 
-                className="text-gray-700 hover:text-brand-orange transition-colors font-medium"
-              >
-                Benefits
-              </button>
-              <button 
                 onClick={() => scrollToSection('about')} 
                 className="text-gray-700 hover:text-brand-orange transition-colors font-medium"
               >
                 About
               </button>
               <button 
-                onClick={() => scrollToSection('contact')} 
+                onClick={() => scrollToSection('recipes')} 
                 className="text-gray-700 hover:text-brand-orange transition-colors font-medium"
               >
-                Contact
+                Recipes
+              </button>
+              <button 
+                onClick={() => scrollToSection('gallery')} 
+                className="text-gray-700 hover:text-brand-orange transition-colors font-medium"
+              >
+                Gallery
+              </button>
+              <button 
+                onClick={() => scrollToSection('faq')} 
+                className="text-gray-700 hover:text-brand-orange transition-colors font-medium"
+              >
+                FAQ
+              </button>
+              <button 
+                onClick={() => scrollToSection('wellness-ai')} 
+                className="text-gray-700 hover:text-brand-orange transition-colors font-medium"
+              >
+                Wellness AI
               </button>
             </div>
           </div>
@@ -68,7 +74,7 @@ export default function Navigation() {
               href="tel:+917010422748" 
               className="bg-brand-orange text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all"
             >
-              Order Now
+              Shop Now
             </a>
           </div>
           
@@ -122,7 +128,7 @@ export default function Navigation() {
                 href="tel:+917010422748" 
                 className="block px-3 py-2 bg-brand-orange text-white rounded-lg font-medium text-center mx-3 mt-4"
               >
-                Order Now
+                Shop Now
               </a>
             </div>
           </div>
