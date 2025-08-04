@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import productShowcasePath from "@assets/img1_1754285845395.png";
+import productShowcasePath from "@assets/img2_1754287235981.png";
 import { Leaf, Brain, Dumbbell, Shield } from "lucide-react";
 import type { Product } from "@shared/schema";
 
@@ -25,7 +25,7 @@ export default function ProductShowcase() {
           <div className="relative">
             <img 
               src={productShowcasePath} 
-              alt="SARIRA Fig Malt with organic figs, almonds and cashews surrounding the package" 
+              alt="SARIRA Fig Malt promotional image highlighting rich nutrients, digestion support, bone strengthening and immunity boost" 
               className="w-full h-auto rounded-2xl shadow-xl" 
             />
             
