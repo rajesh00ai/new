@@ -1,4 +1,4 @@
-import productImage from "@assets/SARIRA-03_1754285266680.png";
+import productImage from "@assets/img2_1754290190972.png";
 
 export default function ProductSection() {
   return (
