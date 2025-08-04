@@ -14,8 +14,10 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="font-bold text-5xl lg:text-6xl text-brand-green leading-tight mb-6">
-                Feed Your Roots. Fuel Your Rise.
+              <h1 className="font-bold text-5xl lg:text-6xl text-brand-green leading-tight mb-6 animate-fade-in-up">
+                <span className="inline-block animate-slide-in-left">Feed Your Roots.</span>
+                <br />
+                <span className="inline-block animate-slide-in-right animation-delay-300">Fuel Your Rise.</span>
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
                 Functional wellness rooted in Tamil tradition, blended for today's lifestyle.
