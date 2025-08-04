@@ -59,14 +59,6 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('benefits')} 
-                  className="hover:text-brand-orange transition-colors text-left"
-                >
-                  Benefits
-                </button>
-              </li>
-              <li>
-                <button 
                   onClick={() => scrollToSection('about')} 
                   className="hover:text-brand-orange transition-colors text-left"
                 >
@@ -75,18 +67,23 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('contact')} 
+                  onClick={() => scrollToSection('recipes')} 
                   className="hover:text-brand-orange transition-colors text-left"
                 >
-                  Contact
+                  Recipes
                 </button>
               </li>
             </ul>
-          </div>
+          </motion.div>
           
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Support</h4>
-            <ul className="space-y-2 opacity-90">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="font-semibold text-base sm:text-lg mb-4">Support</h4>
+            <ul className="space-y-2 opacity-90 text-sm sm:text-base">
               <li>
                 <a 
                   href="/shipping" 
@@ -119,46 +116,61 @@ export default function Footer() {
                   Terms of Service
                 </a>
               </li>
-              <li>
-                <a 
-                  href="/faq" 
-                  className="hover:text-brand-orange transition-colors"
-                >
-                  FAQ
-                </a>
-              </li>
             </ul>
-          </div>
+          </motion.div>
           
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
-            <div className="space-y-3 opacity-90">
-              <div className="flex items-center">
-                <svg className="w-5 h-5 mr-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                <span>+91 70104 22748</span>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="font-semibold text-base sm:text-lg mb-4">Contact</h4>
+            <div className="space-y-3 opacity-90 text-sm sm:text-base">
+              <div>
+                <p className="mb-1">Call us:</p>
+                <a 
+                  href="tel:+917010422748" 
+                  className="hover:text-brand-orange transition-colors font-medium"
+                >
+                  +91 70104 22748
+                </a>
               </div>
-              <div className="flex items-center">
-                <svg className="w-5 h-5 mr-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-                <span>sariranutrition@gmail.com</span>
+              <div>
+                <p className="mb-1">WhatsApp:</p>
+                <a 
+                  href="https://wa.me/917010422748" 
+                  className="hover:text-brand-orange transition-colors font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Message Us
+                </a>
               </div>
-              <div className="flex items-center">
-                <svg className="w-5 h-5 mr-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                <span>Tamil Nadu, India</span>
+              <div>
+                <p className="mb-1">Email:</p>
+                <a 
+                  href="mailto:hello@sarira.in" 
+                  className="hover:text-brand-orange transition-colors font-medium"
+                >
+                  hello@sarira.in
+                </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
         
-        <div className="border-t border-white border-opacity-20 mt-8 pt-8 text-center opacity-90">
-          <p>&copy; 2024 SARIRA. All rights reserved. Traditional Tamil Wellness Products.</p>
-        </div>
+        <motion.div 
+          className="border-t border-white border-opacity-20 mt-12 pt-8 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <p className="opacity-75 text-sm">
+            © 2025 SARIRA Wellness. All rights reserved. | Traditional wisdom meets modern wellness.
+          </p>
+        </motion.div>
       </div>
     </footer>
   );

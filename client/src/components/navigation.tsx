@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import logoPath from "@assets/Logo_1754285787063.png";
 
 export default function Navigation() {
@@ -18,7 +19,12 @@ export default function Navigation() {
     <nav className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
+          <motion.div 
+            className="flex items-center"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="flex-shrink-0 flex items-center">
               <img 
                 src={logoPath} 
@@ -26,7 +32,7 @@ export default function Navigation() {
                 className="h-12 w-auto mr-2"
               />
             </div>
-          </div>
+          </motion.div>
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
@@ -91,48 +97,49 @@ export default function Navigation() {
         </div>
         
         {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <button 
-                onClick={() => scrollToSection('home')}
-                className="block px-3 py-2 text-brand-green hover:text-brand-orange font-medium w-full text-left"
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => scrollToSection('products')}
-                className="block px-3 py-2 text-gray-700 hover:text-brand-orange font-medium w-full text-left"
-              >
-                Products
-              </button>
-              <button 
-                onClick={() => scrollToSection('benefits')}
-                className="block px-3 py-2 text-gray-700 hover:text-brand-orange font-medium w-full text-left"
-              >
-                Benefits
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="block px-3 py-2 text-gray-700 hover:text-brand-orange font-medium w-full text-left"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="block px-3 py-2 text-gray-700 hover:text-brand-orange font-medium w-full text-left"
-              >
-                Contact
-              </button>
-              <a 
-                href="tel:+917010422748" 
-                className="block px-3 py-2 bg-brand-orange text-white rounded-lg font-medium text-center mx-3 mt-4"
-              >
-                Shop Now
-              </a>
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg border-t border-gray-200"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                {[
+                  { id: 'home', label: 'Home' },
+                  { id: 'about', label: 'About' },
+                  { id: 'recipes', label: 'Recipes' },
+                  { id: 'gallery', label: 'Gallery' },
+                  { id: 'faq', label: 'FAQ' },
+                  { id: 'wellness-ai', label: 'Wellness AI' }
+                ].map((item, index) => (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="block px-3 py-2 text-gray-700 hover:text-brand-orange font-medium w-full text-left transition-colors"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 * index }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
+                <motion.a
+                  href="tel:+917010422748"
+                  className="block px-3 py-2 bg-brand-orange text-white rounded-lg font-medium text-center mx-3 mt-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.6 }}
+                >
+                  Shop Now
+                </motion.a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

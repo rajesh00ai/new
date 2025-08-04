@@ -8,7 +8,8 @@ import SariraJournal from "@/components/sarira-journal";
 import SariraCircle from "@/components/sarira-circle";
 import FAQSection from "@/components/faq-section";
 import AIWellnessTips from "@/components/ai-wellness-tips-new";
-import Footer from "@/components/footer";
+import Footer from "@/components/footer-fixed";
+import FloatingCTA from "@/components/floating-cta";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <FAQSection />
       <AIWellnessTips />
       <Footer />
+      <FloatingCTA />
     </div>
   );
 }

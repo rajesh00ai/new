@@ -49,11 +49,11 @@ export default function ProductSection() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-warm-neutral to-soft-neutral p-8 rounded-2xl">
+            <div className="bg-gradient-to-br from-warm-neutral to-soft-neutral p-6 sm:p-8 rounded-2xl">
               <div className="text-center">
-                <div className="text-4xl font-bold text-brand-green mb-2">₹299</div>
+                <div className="text-3xl sm:text-4xl font-bold text-brand-green mb-2">₹299</div>
                 <div className="text-gray-600 mb-6">200g Pouch</div>
-                <button className="bg-brand-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all w-full">
+                <button className="bg-brand-orange text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all w-full card-hover">
                   Buy Now
                 </button>
               </div>
