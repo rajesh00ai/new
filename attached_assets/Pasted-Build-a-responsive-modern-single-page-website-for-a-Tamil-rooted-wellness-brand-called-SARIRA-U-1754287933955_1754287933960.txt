@@ -1,0 +1,69 @@
+Build a responsive, modern, single-page website for a Tamil-rooted wellness brand called "SARIRA". Use dark olive green (#364A22) as the primary background color and #E38A30 as the highlight color. Include elegant fonts and soft animations. The design should feel organic, warm, and clean.
+
+**Sections to include:**
+
+1. **Hero Section**
+   - Brand logo (placeholder)
+   - Product name: "SARIRA Fig Malt"
+   - Tagline: "Legacy of Tamil Wellness in a Spoon"
+   - CTA Button: "Shop Now"
+
+2. **Key Benefits**
+   - Grid layout with icons and short phrases:
+     - No Added Sugar
+     - Rich in Fiber
+     - Supports Digestion
+     - Calcium & Iron Rich
+     - Fertility Booster
+     - Gut Friendly
+
+3. **Our Story**
+   - Inspired by Tamil traditions and grandmother’s wisdom
+   - Highlight use in Siddha medicine, rituals, postpartum nutrition
+   - Cultural quote: "அந்தணர் நூல் வழி நின்றார் அத்திப் பழம் போல்"
+
+4. **Recipes Section**
+   - 3 recipes with thumbnails, short intro & "Read More" link
+     - Classic Fig Malt Drink
+     - Fig Smoothie Bowl
+     - Fig Malt Muffins
+
+5. **Usage Ideas**
+   - Carousel/slider or image grid for:
+     - Toast topping
+     - Chapati filler
+     - Porridge mix
+     - Smoothie boost
+
+6. **Testimonials (Optional)**
+
+7. **Store Locator**
+   - Include map placeholder or location-based listing
+
+8. **Gallery Section**
+   - Product images in lifestyle setting
+   - Carousel or masonry grid style
+
+9. **Shipping & Returns**
+   - Short policies from the PDF
+   - Delivery timelines, refunds, and support
+
+10. **FAQ**
+    - Add top 5 questions from the document
+
+11. **Contact**
+    - WhatsApp support
+    - Email, hours of operation
+
+12. **Footer**
+    - Navigation links (Home, Recipes, FAQs, Contact)
+    - Social media placeholders
+    - Copyright © 2025 SARIRA Wellness
+
+**Design Notes:**
+- No popup on load.
+- Avoid any unnecessary modals.
+- Clean layout with subtle transitions.
+- Use vector icons for benefits.
+- Logo must be clearly visible on all backgrounds.
+- Mobile-first design.

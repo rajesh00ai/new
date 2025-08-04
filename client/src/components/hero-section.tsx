@@ -15,12 +15,13 @@ export default function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="font-bold text-5xl lg:text-6xl text-brand-green leading-tight">
-                Traditional Tamil
-                <span className="text-brand-orange"> Wellness</span>
-                <br />
-                Redefined
+                SARIRA
+                <span className="text-brand-orange block"> Fig Malt</span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-2xl text-brand-green font-medium mb-4 italic">
+                "Legacy of Tamil Wellness in a Spoon"
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Experience the ancient wisdom of Tamil nutrition with our premium Fig Malt blend. 
                 Crafted with organic figs, almonds, and cashews for modern wellness needs.
               </p>
@@ -31,7 +32,7 @@ export default function HeroSection() {
                 onClick={scrollToProducts}
                 className="bg-brand-green text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-opacity-90 transition-all text-center"
               >
-                Explore Products
+                Shop Now
               </button>
               <a 
                 href="tel:+917010422748" 
