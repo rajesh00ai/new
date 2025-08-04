@@ -1,0 +1,545 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARIRA - Premium Tamil Wellness | Fig Malt & Natural Health Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green': '#364A22',
+                        'brand-orange': '#E38A30',
+                        'warm-neutral': '#F8F6F3',
+                        'soft-neutral': '#E8E5E0'
+                    },
+                    fontFamily: {
+                        'heading': ['Inter', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-body bg-warm-neutral text-gray-800">
+
+    <!-- @COMPONENT: Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-8 h-8 bg-brand-green rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-sm">S</span>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-brand-green">SARIRA</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-brand-green hover:text-brand-orange transition-colors font-medium">Home</a>
+                        <a href="#products" class="text-gray-700 hover:text-brand-orange transition-colors font-medium">Products</a>
+                        <a href="#benefits" class="text-gray-700 hover:text-brand-orange transition-colors font-medium">Benefits</a>
+                        <a href="#about" class="text-gray-700 hover:text-brand-orange transition-colors font-medium">About</a>
+                        <a href="#contact" class="text-gray-700 hover:text-brand-orange transition-colors font-medium">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <a href="tel:+917010422748" class="bg-brand-orange text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all">
+                        Order Now
+                    </a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-brand-green hover:text-brand-orange">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-warm-neutral to-soft-neutral py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="font-heading text-5xl lg:text-6xl font-bold text-brand-green leading-tight">
+                            Traditional Tamil
+                            <span class="text-brand-orange">Wellness</span>
+                            Redefined
+                        </h1>
+                        <p class="text-xl text-gray-600 leading-relaxed">
+                            Experience the ancient wisdom of Tamil nutrition with our premium Fig Malt blend. 
+                            Crafted with organic figs, almonds, and cashews for modern wellness needs.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#products" class="bg-brand-green text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-opacity-90 transition-all text-center">
+                            Explore Products
+                        </a>
+                        <a href="tel:+917010422748" class="border-2 border-brand-orange text-brand-orange px-8 py-4 rounded-full font-semibold text-lg hover:bg-brand-orange hover:text-white transition-all text-center">
+                            <i class="fas fa-phone mr-2"></i>Order Now
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center space-x-8 pt-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-brand-green">100%</div>
+                            <div class="text-sm text-gray-600">Organic</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-brand-green">Ancient</div>
+                            <div class="text-sm text-gray-600">Recipes</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-brand-green">Natural</div>
+                            <div class="text-sm text-gray-600">Ingredients</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Hero product image showcasing Fig Malt with natural ingredients -->
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAoACgDASIAAhEBAxEB/8QAGwAAAQUBAQAAAAAAAAAAAAAABQECAwQGAAf/xAAuEAACAQMDAwIEBgMAAAAAAAABAgMABBEFEiExQVEGYRMiMnEUgZGhwfDR4fH/xAAaAQACAwEBAAAAAAAAAAAAAAACAwEEBQAG/8QAJREAAgICAgICAgMAAAAAAAAAAQIAAxEEIRIxQVETImFxBTKR/9oADAMBAAIRAxEAPwD1+iiitJyiiiihJRRRQkooooSUUUUJKKKKElf/2Q==" 
+                         alt="SARIRA Fig Malt product showcase" 
+                         class="w-full h-auto rounded-2xl shadow-2xl" 
+                         data-mock="true" 
+                         data-implementation="Replace with actual hero product image">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Product Showcase -->
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold text-brand-green mb-4">Premium Fig Malt Collection</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover our flagship product crafted with the finest organic ingredients, 
+                    following traditional Tamil wellness practices for modern health benefits.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <!-- Main product image showing Fig Malt package with natural ingredients scattered around -->
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAoACgDASIAAhEBAxEB/8QAGwAAAQUBAQAAAAAAAAAAAAAABQECAwQGAAf/xAAuEAACAQMDAwIEBgMAAAAAAAABAgMABBEFEiExQVEGYRMiMnEUgZGhwfDR4fX/xAAaAQACAwEBAAAAAAAAAAAAAAACAwEEBQAG/8QAJREAAgICAgICAgMAAAAAAAAAAQIAAxEEIRIxQVETImFxBTKR/9oADAMBAAIRAxEAPwD1+iiitJyiiiihJRRRQkooooSUUUUJKKKKElf/2Q==" 
+                         alt="SARIRA Fig Malt premium packaging" 
+                         class="w-full h-auto rounded-2xl shadow-xl" 
+                         data-mock="true" 
+                         data-implementation="Use provided product images">
+                    
+                    <div class="absolute -top-4 -right-4 bg-brand-orange text-white px-4 py-2 rounded-full font-semibold">
+                        Premium Quality
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="font-heading text-3xl font-bold text-brand-green mb-4">SARIRA Fig Malt</h3>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Our signature blend combines the natural sweetness of organic figs with the protein-rich 
+                            goodness of almonds and cashews. A perfect harmony of taste and nutrition.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-brand-green bg-opacity-10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-leaf text-brand-green text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-brand-green">Organic Figs</div>
+                                <div class="text-sm text-gray-600">Rich in fiber & antioxidants</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-brand-orange bg-opacity-10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-brain text-brand-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-brand-green">Almonds</div>
+                                <div class="text-sm text-gray-600">Brain & heart health</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-brand-green bg-opacity-10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-dumbbell text-brand-green text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-brand-green">Cashews</div>
+                                <div class="text-sm text-gray-600">Protein & healthy fats</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-brand-orange bg-opacity-10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-brand-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-brand-green">Natural Immunity</div>
+                                <div class="text-sm text-gray-600">Boosts immune system</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="tel:+917010422748" class="bg-brand-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all text-center">
+                            <i class="fas fa-phone mr-2"></i>Order Now: +91 7010422748
+                        </a>
+                        <button class="border-2 border-brand-green text-brand-green px-8 py-3 rounded-full font-semibold hover:bg-brand-green hover:text-white transition-all">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Product Showcase -->
+
+    <!-- @COMPONENT: Health Benefits -->
+    <section id="benefits" class="py-20 bg-gradient-to-br from-brand-green to-brand-green/80 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold mb-4">Wellness Benefits</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Experience the transformative power of traditional Tamil nutrition science 
+                    backed by modern wellness research.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-orange transition-all">
+                        <i class="fas fa-heart text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-3">Rich in Nutrients</h3>
+                    <p class="opacity-90 leading-relaxed">
+                        Packed with essential vitamins, minerals, and antioxidants for optimal health and vitality.
+                    </p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-orange transition-all">
+                        <i class="fas fa-stomach text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-3">Supports Digestion</h3>
+                    <p class="opacity-90 leading-relaxed">
+                        Natural fiber content promotes healthy digestive function and gut wellness.
+                    </p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-orange transition-all">
+                        <i class="fas fa-bone text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-3">Strengthens Bones</h3>
+                    <p class="opacity-90 leading-relaxed">
+                        Rich in calcium and magnesium to support strong, healthy bone structure.
+                    </p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-orange transition-all">
+                        <i class="fas fa-shield-virus text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-3">Boosts Immunity</h3>
+                    <p class="opacity-90 leading-relaxed">
+                        Natural compounds enhance immune system function and disease resistance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Health Benefits -->
+
+    <!-- @COMPONENT: Recipe & Usage -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="font-heading text-4xl font-bold text-brand-green mb-6">Simple & Delicious Ways to Enjoy</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Discover versatile recipes and serving suggestions that make SARIRA Fig Malt 
+                        a delightful addition to your daily wellness routine.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-brand-orange bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-glass-whiskey text-brand-orange"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-brand-green text-lg mb-2">Morning Energy Drink</h4>
+                                <p class="text-gray-600">Mix 2 tablespoons with warm milk for a nutritious start to your day.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-brand-orange bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-bowl-food text-brand-orange"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-brand-green text-lg mb-2">Smoothie Bowl Topping</h4>
+                                <p class="text-gray-600">Sprinkle over yogurt or smoothie bowls for added nutrition and crunch.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-brand-orange bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-cookie-bite text-brand-orange"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-brand-green text-lg mb-2">Healthy Dessert</h4>
+                                <p class="text-gray-600">Blend with dates and coconut for guilt-free energy balls.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Image showing Fig Malt prepared as a creamy drink with natural garnishes -->
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAoACgDASIAAhEBAxEB/8QAGwAAAQUBAQAAAAAAAAAAAAAABQECAwQGAAf/xAAuEAACAQMDAwIEBgMAAAAAAAABAgMABBEFEiExQVEGYRMiMnEUgZGhwfDR4fX/xAAaAQACAwEBAAAAAAAAAAAAAAACAwEEBQAG/8QAJREAAgICAgICAgMAAAAAAAAAAQIAAxEEIRIxQVETImFxBTKR/9oADAMBAAIRAxEAPwD1+iiitJyiiiihJRRRQkooooSUUUUJKKKKElf/2Q==" 
+                         alt="SARIRA Fig Malt served as nutritious drink" 
+                         class="w-full h-auto rounded-2xl shadow-xl" 
+                         data-mock="true" 
+                         data-implementation="Use recipe/serving suggestion images">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Recipe & Usage -->
+
+    <!-- @COMPONENT: About SARIRA -->
+    <section id="about" class="py-20 bg-gradient-to-br from-warm-neutral to-soft-neutral">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="font-heading text-4xl font-bold text-brand-green mb-6">The SARIRA Story</h2>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                            SARIRA embodies the ancient Tamil philosophy of holistic wellness, where food is medicine 
+                            and medicine is food. Our name, derived from Sanskrit meaning "body" or "physical form," 
+                            reflects our commitment to nourishing the body with nature's finest ingredients.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Rooted in centuries-old Tamil wellness traditions, we combine time-tested recipes with 
+                            modern nutritional science to create products that honor our heritage while meeting 
+                            contemporary health needs.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                            <div class="text-3xl font-bold text-brand-green mb-2">Ancient</div>
+                            <div class="text-gray-600">Tamil Wisdom</div>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                            <div class="text-3xl font-bold text-brand-orange mb-2">Modern</div>
+                            <div class="text-gray-600">Science</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Image showing traditional Tamil wellness elements combined with modern presentation -->
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAoACgDASIAAhEBAxEB/8QAGwAAAQUBAQAAAAAAAAAAAAAABQECAwQGAAf/xAAuEAACAQMDAwIEBgMAAAAAAAABAgMABBEFEiExQVEGYRMiMnEUgZGhwfDR4fX/xAAaAQACAwEBAAAAAAAAAAAAAAACAwEEBQAG/8QAJREAAgICAgICAgMAAAAAAAAAAQIAAxEEIRIxQVETImFxBTKR/9oADAMBAAIRAxEAPwD1+iiitJyiiiihJRRRQkooooSUUUUJKKKKElf/2Q==" 
+                         alt="Traditional Tamil wellness ingredients and practices" 
+                         class="w-full h-auto rounded-2xl shadow-xl" 
+                         data-mock="true" 
+                         data-implementation="Use traditional wellness imagery">
+                    
+                    <div class="absolute inset-0 bg-brand-green bg-opacity-10 rounded-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About SARIRA -->
+
+    <!-- @COMPONENT: AI Wellness Tips -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-heading text-4xl font-bold text-brand-green mb-6">Personalized Wellness Tips</h2>
+            <p class="text-xl text-gray-600 mb-12">
+                Get AI-powered wellness recommendations based on Tamil nutritional wisdom and modern health science.
+            </p>
+            
+            <div class="bg-gradient-to-br from-brand-green to-brand-green/80 rounded-2xl p-8 text-white">
+                <div class="space-y-6">
+                    <div class="flex items-center justify-center space-x-4">
+                        <i class="fas fa-robot text-3xl text-brand-orange"></i>
+                        <h3 class="font-heading text-2xl font-semibold">AI Wellness Assistant</h3>
+                    </div>
+                    
+                    <div class="max-w-2xl mx-auto">
+                        <div class="bg-white bg-opacity-20 rounded-xl p-6 mb-6">
+                            <p class="text-lg opacity-90">
+                                "Based on traditional Tamil wellness practices, incorporating Fig Malt into your morning routine 
+                                can enhance digestive health and provide sustained energy throughout the day."
+                            </p>
+                        </div>
+                        
+                        <button class="bg-brand-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all" data-implementation="Connect to AI wellness tip generator">
+                            <i class="fas fa-lightbulb mr-2"></i>Get Your Personalized Tip
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AI Wellness Tips -->
+
+    <!-- @COMPONENT: Contact & Ordering -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-brand-green to-brand-green/80 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold mb-4">Start Your Wellness Journey</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Ready to experience the benefits of traditional Tamil wellness? 
+                    Contact us today to order your SARIRA Fig Malt.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-phone text-2xl text-brand-orange"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-3">Call to Order</h3>
+                    <p class="opacity-90 mb-4">Speak directly with our wellness experts</p>
+                    <a href="tel:+917010422748" class="text-brand-orange font-semibold text-lg hover:underline">
+                        +91 7010422748
+                    </a>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-whatsapp text-2xl text-brand-orange"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-3">WhatsApp Order</h3>
+                    <p class="opacity-90 mb-4">Quick and easy ordering via WhatsApp</p>
+                    <a href="https://wa.me/917010422748" class="text-brand-orange font-semibold text-lg hover:underline">
+                        Message Us
+                    </a>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shipping-fast text-2xl text-brand-orange"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-3">Fast Delivery</h3>
+                    <p class="opacity-90 mb-4">Premium products delivered to your door</p>
+                    <span class="text-brand-orange font-semibold text-lg">
+                        Pan-India Shipping
+                    </span>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="tel:+917010422748" class="bg-brand-orange text-white px-12 py-4 rounded-full font-bold text-xl hover:bg-opacity-90 transition-all inline-block">
+                    <i class="fas fa-shopping-cart mr-3"></i>Order SARIRA Fig Malt Now
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact & Ordering -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-brand-green text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold">S</span>
+                        </div>
+                        <span class="font-heading font-bold text-2xl">SARIRA</span>
+                    </div>
+                    <p class="opacity-90 leading-relaxed">
+                        Bringing traditional Tamil wellness wisdom to modern health-conscious individuals 
+                        through premium, organic nutrition products.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 opacity-90">
+                        <li><a href="#home" class="hover:text-brand-orange transition-colors">Home</a></li>
+                        <li><a href="#products" class="hover:text-brand-orange transition-colors">Products</a></li>
+                        <li><a href="#benefits" class="hover:text-brand-orange transition-colors">Benefits</a></li>
+                        <li><a href="#about" class="hover:text-brand-orange transition-colors">About</a></li>
+                        <li><a href="#contact" class="hover:text-brand-orange transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4">Contact Info</h4>
+                    <div class="space-y-3 opacity-90">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-brand-orange"></i>
+                            <span>+91 7010422748</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-brand-orange"></i>
+                            <span data-mock="true">info@sarira.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-brand-orange"></i>
+                            <span data-mock="true">Tamil Nadu, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center opacity-90">
+                <p>&copy; 2024 SARIRA. All rights reserved. Traditional Tamil Wellness Products.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Simple smooth scrolling for navigation
+        (function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Mobile menu toggle functionality
+            // TODO: Implement mobile menu toggle logic
+
+            // AI wellness tips interaction
+            // TODO: Implement AI wellness tip generator API integration
+
+            // Order form interactions
+            // TODO: Implement order form submission and validation
+        })();
+    </script>
+
+</body>
+</html>
