@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-green text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-6">
               <img 
@@ -69,6 +69,52 @@ export default function Footer() {
                 >
                   Contact
                 </button>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="font-semibold text-lg mb-4">Support</h4>
+            <ul className="space-y-2 opacity-90">
+              <li>
+                <a 
+                  href="/shipping" 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  Shipping & Delivery
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/returns" 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  Returns & Refunds
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/privacy" 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/terms" 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/faq" 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  FAQ
+                </a>
               </li>
             </ul>
           </div>
