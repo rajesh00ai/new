@@ -1,59 +1,24 @@
 import OpenAI from "openai";
 
-// the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
 const openai = new OpenAI({ 
   apiKey: process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY_ENV_VAR || "default_key"
 });
 
-export interface WellnessTipRequest {
-  healthGoal?: string;
-  currentDiet?: string;
-  activityLevel?: string;
-  age?: number;
-  preferences?: string[];
-}
-
-export interface WellnessTipResponse {
-  tip: string;
-  benefits: string;
-  category: string;
-  additionalInfo?: string;
-}
+export interface WellnessTipRequest { healthGoal?: string; currentDiet?: string; activityLevel?: string; age?: number; preferences?: string[]; }
+export interface WellnessTipResponse { tip: string; benefits: string; category: string; additionalInfo?: string; }
 
 export async function generateWellnessTip(request: WellnessTipRequest): Promise<WellnessTipResponse> {
   try {
-    const prompt = `As a Tamil wellness expert specializing in traditional nutrition and modern health science, provide a personalized wellness tip based on the following information:
-
-Health Goal: ${request.healthGoal || 'general wellness'}
-Current Diet: ${request.currentDiet || 'not specified'}
-Activity Level: ${request.activityLevel || 'moderate'}
-Age: ${request.age || 'not specified'}
-Preferences: ${request.preferences?.join(', ') || 'none specified'}
-
-Focus on traditional Tamil wellness practices, especially incorporating ingredients like figs, almonds, cashews, and other natural foods. Provide practical, actionable advice that combines ancient wisdom with modern nutritional understanding.
-
-Respond with JSON in this format:
-{
-  "tip": "specific actionable wellness tip",
-  "benefits": "explanation of health benefits",
-  "category": "category like 'nutrition', 'digestive health', 'immunity', etc.",
-  "additionalInfo": "optional additional context or recipe suggestions"
-}`;
+    const prompt = `As a Tamil wellness expert, provide a wellness tip for: ${request.healthGoal || 'general wellness'}. Focus on traditional ingredients like figs, almonds, cashews. Respond with JSON: {"tip": "actionable tip", "benefits": "health benefits", "category": "category"}`;
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [
-        {
-          role: "system",
-          content: "You are an expert in traditional Tamil wellness practices and modern nutritional science. Provide personalized wellness advice that combines ancient wisdom with contemporary health knowledge."
-        },
-        {
-          role: "user",
-          content: prompt
-        }
+        { role: "system", content: "Tamil wellness expert providing practical health advice." },
+        { role: "user", content: prompt }
       ],
       response_format: { type: "json_object" },
-      max_tokens: 500,
+      max_tokens: 300,
     });
 
     const result = JSON.parse(response.choices[0].message.content || '{}');
@@ -79,23 +44,15 @@ Respond with JSON in this format:
 
 export async function generateProductRecommendation(userPreferences: string): Promise<string> {
   try {
-    const prompt = `Based on these user preferences: "${userPreferences}", recommend how SARIRA Fig Malt can benefit their wellness journey. Focus on traditional Tamil wellness benefits and modern health applications.
-
-Provide a personalized recommendation that explains why Fig Malt would be ideal for their specific needs.`;
+    const prompt = `Recommend SARIRA Fig Malt for: "${userPreferences}". Focus on Tamil wellness benefits.`;
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [
-        {
-          role: "system", 
-          content: "You are a Tamil wellness expert recommending SARIRA Fig Malt based on user needs. Be specific about benefits and usage."
-        },
-        {
-          role: "user",
-          content: prompt
-        }
+        { role: "system", content: "Tamil wellness expert recommending SARIRA Fig Malt." },
+        { role: "user", content: prompt }
       ],
-      max_tokens: 300,
+      max_tokens: 200,
     });
 
     return response.choices[0].message.content || "SARIRA Fig Malt is an excellent choice for natural wellness, combining traditional Tamil nutrition wisdom with premium organic ingredients.";

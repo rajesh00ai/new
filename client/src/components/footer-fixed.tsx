@@ -1,5 +1,4 @@
 import logoPath from "@assets/Logo_1754285787063.png";
-import { motion } from "framer-motion";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -13,17 +12,13 @@ export default function Footer() {
     <footer className="bg-brand-green text-white py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <div className="flex items-center mb-6">
               <img 
                 src={logoPath} 
                 alt="SARIRA Wellness Logo" 
                 className="h-10 sm:h-12 w-auto mr-3"
+                loading="lazy"
               />
               <span className="font-bold text-xl sm:text-2xl">SARIRA</span>
             </div>
@@ -31,14 +26,9 @@ export default function Footer() {
               Bringing traditional Tamil wellness wisdom to modern health-conscious individuals 
               through premium, organic nutrition products.
             </p>
-          </motion.div>
+          </div>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h4 className="font-semibold text-base sm:text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 opacity-90 text-sm sm:text-base">
               <li>
@@ -76,12 +66,7 @@ export default function Footer() {
             </ul>
           </motion.div>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h4 className="font-semibold text-base sm:text-lg mb-4">Support</h4>
             <ul className="space-y-2 opacity-90 text-sm sm:text-base">
               <li>
@@ -117,14 +102,9 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </motion.div>
+          </div>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h4 className="font-semibold text-base sm:text-lg mb-4">Contact</h4>
             <div className="space-y-3 opacity-90 text-sm sm:text-base">
               <div>
@@ -157,20 +137,14 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
         
-        <motion.div 
-          className="border-t border-white border-opacity-20 mt-12 pt-8 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
+        <div className="border-t border-white border-opacity-20 mt-12 pt-8 text-center">
           <p className="opacity-75 text-sm">
             © 2025 SARIRA Wellness. All rights reserved. | Traditional wisdom meets modern wellness.
           </p>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );
