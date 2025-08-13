@@ -4,7 +4,7 @@ import AboutSarira from "@/components/about-sarira";
 import ProductSection from "@/components/product-section";
 import RecipesGrid from "@/components/recipes-grid";
 import VisualStory from "@/components/visual-story";
-import FAQSection from "@/components/faq-section";
+import InteractiveFAQ from "@/components/interactive-faq";
 import AIWellnessTips from "@/components/ai-wellness-tips-new";
 import Footer from "@/components/footer-fixed";
 import FloatingCTA from "@/components/floating-cta";
@@ -18,7 +18,7 @@ export default function Home() {
       <ProductSection />
       <RecipesGrid />
       <VisualStory />
-      <FAQSection />
+      <InteractiveFAQ />
       <AIWellnessTips />
       <Footer />
       <FloatingCTA />
