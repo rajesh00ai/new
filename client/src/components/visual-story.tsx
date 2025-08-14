@@ -9,27 +9,27 @@ export default function VisualStory() {
   const images = [
     {
       src: gallery1,
-      caption: "Healthy lifestyle with SARIRA"
+      caption: "A woman enjoying a healthy smoothie bowl"
     },
     {
       src: gallery2,
-      caption: "Premium Fig Malt quality"
+      caption: "A close-up of SARIRA Fig Malt being sprinkled"
     },
     {
       src: gallery3,
-      caption: "Family wellness moments"
+      caption: "A young mother feeding her child a healthy snack"
     },
     {
       src: gallery4,
-      caption: "Traditional Tamil nutrition"
+      caption: "A traditional Tamil meal served on a banana leaf"
     },
     {
       src: gallery5,
-      caption: "Natural ingredients"
+      caption: "Beautifully making a bowl of fresh, star fruit"
     },
     {
       src: gallery6,
-      caption: "Wellness for all ages"
+      caption: "An elderly person enjoying a warm drink"
     }
   ];
 
@@ -38,9 +38,11 @@ export default function VisualStory() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-brand-green mb-4">
-            Product Gallery
+            Our Visual Story
           </h2>
-          <p className="text-lg text-gray-600">See SARIRA in action</p>
+          <p className="text-lg text-gray-600">
+            A glimpse into the world of SARIRA
+          </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -53,7 +55,6 @@ export default function VisualStory() {
                 src={image.src} 
                 alt={image.caption}
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-end">
                 <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">

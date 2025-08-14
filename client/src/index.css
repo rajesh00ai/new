@@ -2,6 +2,166 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hero Section Animations */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Additional responsive animations */
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.5s ease-out;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem !important;
+  }
+  
+  .mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .mobile-text-center {
+    text-align: center;
+  }
+  
+  .mobile-full-width {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-grid {
+    gap: 2rem;
+  }
+  
+  .mobile-stack {
+    flex-direction: column;
+  }
+  
+  .mobile-compact {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading states */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 :root {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(20, 14.3%, 4.1%);
@@ -24,10 +184,34 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
 
+  /* SARIRA Brand Colors - Updated from #364A22 and #E38A30 */
   --brand-green: hsl(75, 36%, 21%);
   --brand-orange: hsl(28, 71%, 54%);
   --warm-neutral: hsl(36, 33%, 97%);
   --soft-neutral: hsl(30, 16%, 90%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
 }
 
 @layer base {
@@ -36,31 +220,69 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: system-ui, -apple-system, sans-serif;
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: system-ui, -apple-system, sans-serif;
-    font-weight: 600;
+    font-family: 'Inter', sans-serif;
   }
 }
 
-html { scroll-behavior: smooth; }
-.card-hover { transition: transform 0.2s ease; }
-.card-hover:hover { transform: translateY(-4px); }
-
 @layer utilities {
-  .text-brand-green { color: var(--brand-green); }
-  .text-brand-orange { color: var(--brand-orange); }
-  .bg-brand-green { background-color: var(--brand-green); }
-  .bg-brand-orange { background-color: var(--brand-orange); }
-  .bg-warm-neutral { background-color: var(--warm-neutral); }
-  .bg-soft-neutral { background-color: var(--soft-neutral); }
-  .border-brand-green { border-color: var(--brand-green); }
-  .border-brand-orange { border-color: var(--brand-orange); }
-  .hover\:bg-brand-green:hover { background-color: var(--brand-green); }
-  .hover\:bg-brand-orange:hover { background-color: var(--brand-orange); }
-  .hover\:text-brand-green:hover { color: var(--brand-green); }
-  .hover\:text-brand-orange:hover { color: var(--brand-orange); }
+  .brand-green {
+    color: var(--brand-green);
+  }
+  
+  .bg-brand-green {
+    background-color: var(--brand-green);
+  }
+  
+  .brand-orange {
+    color: var(--brand-orange);
+  }
+  
+  .bg-brand-orange {
+    background-color: var(--brand-orange);
+  }
+  
+  .bg-warm-neutral {
+    background-color: var(--warm-neutral);
+  }
+  
+  .bg-soft-neutral {
+    background-color: var(--soft-neutral);
+  }
+  
+  .text-brand-green {
+    color: var(--brand-green);
+  }
+  
+  .text-brand-orange {
+    color: var(--brand-orange);
+  }
+  
+  .border-brand-green {
+    border-color: var(--brand-green);
+  }
+  
+  .border-brand-orange {
+    border-color: var(--brand-orange);
+  }
+  
+  .hover\:bg-brand-green:hover {
+    background-color: var(--brand-green);
+  }
+  
+  .hover\:bg-brand-orange:hover {
+    background-color: var(--brand-orange);
+  }
+  
+  .hover\:text-brand-green:hover {
+    color: var(--brand-green);
+  }
+  
+  .hover\:text-brand-orange:hover {
+    color: var(--brand-orange);
+  }
 }

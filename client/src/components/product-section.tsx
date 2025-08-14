@@ -6,9 +6,11 @@ export default function ProductSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-brand-green mb-4">
-            Premium Fig Malt
+            Fig Malt – Tradition You Can Sip
           </h2>
-          <p className="text-lg text-gray-600">Organic Figs & Premium Nuts</p>
+          <p className="text-lg text-gray-600">
+            Made with Organic Figs & Premium Nuts
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -17,26 +19,33 @@ export default function ProductSection() {
               src={productImage} 
               alt="SARIRA Fig Malt Product"
               className="w-full h-auto rounded-2xl shadow-xl"
-              loading="lazy"
             />
           </div>
           
           <div className="order-1 lg:order-2 space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-brand-green mb-4">Benefits</h3>
+              <h3 className="text-2xl font-bold text-brand-green mb-6">Key Benefits</h3>
               <div className="space-y-4">
-                {[
-                  "Fertility booster",
-                  "Postpartum nourishment", 
-                  "Improves gut health",
-                  "No added sugar",
-                  "Rich in iron & fiber"
-                ].map((benefit) => (
-                  <div key={benefit} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-brand-orange rounded-full"></div>
-                    <span className="text-gray-700">{benefit}</span>
-                  </div>
-                ))}
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-brand-orange rounded-full"></div>
+                  <span className="text-gray-700">Fertility booster</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-brand-orange rounded-full"></div>
+                  <span className="text-gray-700">Postpartum nourishment</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-brand-orange rounded-full"></div>
+                  <span className="text-gray-700">Improves gut health</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-brand-orange rounded-full"></div>
+                  <span className="text-gray-700">Naturally sweet – no added sugar</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-brand-orange rounded-full"></div>
+                  <span className="text-gray-700">Rich in iron & fiber</span>
+                </div>
               </div>
             </div>
 
@@ -44,12 +53,9 @@ export default function ProductSection() {
               <div className="text-center">
                 <div className="text-3xl sm:text-4xl font-bold text-brand-green mb-2">₹299</div>
                 <div className="text-gray-600 mb-6">200g Pouch</div>
-                <a 
-                  href="tel:+917010422748"
-                  className="bg-brand-orange text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all w-full inline-block"
-                >
+                <button className="bg-brand-orange text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all w-full card-hover">
                   Buy Now
-                </a>
+                </button>
               </div>
             </div>
           </div>
