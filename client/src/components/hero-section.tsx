@@ -1,4 +1,4 @@
-import heroProductPath from "@assets/WhatsApp Image 2025-07-24 at 12.04.08_7bef17f0_1754285708678.jpg";
+import heroProductPath from "@assets/img2_1754287235981.png";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
