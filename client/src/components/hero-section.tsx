@@ -1,4 +1,4 @@
-import heroProductPath from "@assets/img2_1754287235981.png";
+import heroProductPath from "@assets/img2_1754290190972.png";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {

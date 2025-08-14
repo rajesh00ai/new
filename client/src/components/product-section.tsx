@@ -1,4 +1,4 @@
-import productImage from "@assets/img2_1754290190972.png";
+import productImage from "@assets/img2_1754287235981.png";
 
 export default function ProductSection() {
   return (
