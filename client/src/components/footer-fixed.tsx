@@ -1,3 +1,4 @@
+import logoPath from "@assets/Logo_1754285787063.png";
 import { motion } from "framer-motion";
 
 export default function Footer() {
@@ -19,9 +20,11 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <div className="flex items-center mb-6">
-              <div className="h-10 sm:h-12 w-10 sm:w-12 bg-white rounded-full flex items-center justify-center mr-3">
-                <span className="text-brand-green font-bold text-lg sm:text-xl">S</span>
-              </div>
+              <img 
+                src={logoPath} 
+                alt="SARIRA Wellness Logo" 
+                className="h-10 sm:h-12 w-auto mr-3"
+              />
               <span className="font-bold text-xl sm:text-2xl">SARIRA</span>
             </div>
             <p className="opacity-90 leading-relaxed text-sm sm:text-base">
