@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoPath from "@assets/Logo_1754285787063.png";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,11 +25,9 @@ export default function Navigation() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex-shrink-0 flex items-center">
-              <img 
-                src={logoPath} 
-                alt="SARIRA Logo" 
-                className="h-12 w-auto mr-2"
-              />
+              <div className="h-12 w-12 bg-brand-green rounded-full flex items-center justify-center mr-2">
+                <span className="text-white font-bold text-lg">S</span>
+              </div>
             </div>
           </motion.div>
           
